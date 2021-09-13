@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.bg-purple{
+    background-color: rgb(59, 0, 114);
+}
+
+.main-title{
+    margin-left: 10px;
+    font-size: xx-large;
+    font-family: 'Pacifico', cursive;
+}
+
+.carousel-caption{
+    top: 0;
+    bottom: auto;
+}
+
+.carousel-item h2{
+    color: rgb(59, 0, 114);
+    font-size: 4vw;
+}
+
+.carousel-item p{
+    color: white;
+    font-size: 2vw;
+}
+
+h2{
+    color: rgb(59, 0, 114);
+    font-size: 4vw;
+}
+
+footer div{
+    background-color: rgb(59, 0, 114);
+    color: white;
+    height: 10vh;
+}
+
+@media screen and (max-width: 426px){
+    .carousel-item{
+        background-color: rgb(214, 112, 214);
+        height: 50vh;
+    }
+
+    .carousel-caption{
+        top: auto;
+        bottom: 0;
+    }
+
+    .carousel-item h2{
+        font-size: 6vw;
+    }
+    
+    .carousel-item p{
+        font-size: 3vw;
+    }
+
+    h2{
+        font-size: 6vw;
+    }
+
+    .nav-item a{
+        font-size: .6em;
+    }
+}
