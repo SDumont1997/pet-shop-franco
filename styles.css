@@ -38,7 +38,7 @@ footer div{
 
 @media screen and (max-width: 426px){
     .carousel-item{
-        background-color: rgb(214, 112, 214);
+        background-color: rgba(109, 68, 146, 0.719);
         height: 50vh;
     }
 
