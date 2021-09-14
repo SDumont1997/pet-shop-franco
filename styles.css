@@ -27,8 +27,10 @@
 }
 
 .carousel-item p{
-    color: white;
+    color: white; 
     font-size: 2vw;
+    -webkit-text-stroke: 0.1vh rgb(59, 0, 114);
+    font-family: 'Pacifico', cursive;
 }
 
 h2{
