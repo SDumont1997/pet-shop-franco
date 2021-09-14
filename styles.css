@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .bg-purple{
     background-color: rgb(59, 0, 114);
 }
@@ -44,6 +50,19 @@ input{
 select{
     border: none;
     border-bottom: 3px solid rgb(59, 0, 114);
+}
+
+.limit{
+    width: 150px;
+    height: 150px;
+    max-height: 150px;
+    max-width: 150px;
+    overflow: hidden;
+}
+
+.limit img{
+    height: 100%;
+    width: 100%;
 }
 
 @media screen and (max-width: 426px){

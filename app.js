@@ -2,6 +2,8 @@ const app = Vue.createApp({
     data() {
         return {
             products: [],
+            medicines: [],
+            toys: [],
             formElements: ["", "", "", "", ""],
             formSeen: true,
         }
@@ -20,6 +22,8 @@ const app = Vue.createApp({
             })
             .then((data) => {
                 this.products = [...data.response]
+                this.medicines = [...data.response.filter(product => product.tipo === "Medicamento")]
+                this.toys = [...data.response.filter(product => product.tipo === "Juguete")]
             })
     },
     computed: {

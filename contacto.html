@@ -12,8 +12,8 @@
     <div id="app">
         <div class="d-flex flex-column justify-content-between min-vh-100">
 
-            <div class="container-fluid bg-purple sticky-top">
-                <header class="d-flex flex-wrap justify-content-center py-3">
+            <div class="container-fluid sticky-top p-0">
+                <header class="d-flex flex-wrap justify-content-center bg-purple p-3">
                     <a href="./index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                         <img src="./assets/logo.png" width="100" class="ml-2">
                         <span class="text-light main-title">Pet Shop Franco</span>
@@ -21,12 +21,25 @@
                     
                     <ul class="nav nav-pills d-flex align-items-center">
                         <li class="nav-item"><a href="./index.html" class="nav-link text-light" aria-current="page">Inicio</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link active bg-warning text-dark">Contáctenos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-warning">Contáctenos</a></li>
                         <li class="nav-item"><a href="./farmacia.html" class="nav-link text-light">Farmacia</a></li>
                         <li class="nav-item"><a href="./juguetes.html" class="nav-link text-light">Juguetes</a></li>
                     </ul>
                 </header>
+                <div class="d-flex justify-content-center bg-purple pb-1">
+                    <button class="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
+                </div>
             </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Carrito de compras</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  ...
+                </div>
+              </div>
 
             <div class="container" v-if="!formSeen">
                 <div class="row">
