@@ -65,6 +65,23 @@ select{
     width: 100%;
 }
 
+/*******FOOTER***********/
+.divFooter>a{
+    background-color: inherit;
+    border: none;
+    transition: 1s;
+}
+.divFooter>a>i{
+    color: #fff;
+    font-size: 25px;
+    transition: 1s;
+}
+.divFooter>a>i:hover{
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+
 @media screen and (max-width: 426px){
     .carousel-item{
         background-color: rgba(109, 68, 146, 0.719);
