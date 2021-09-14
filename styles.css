@@ -36,6 +36,16 @@ footer div{
     height: 10vh;
 }
 
+input{
+    border: none;
+    border-bottom: 3px solid rgb(59, 0, 114);
+}
+
+select{
+    border: none;
+    border-bottom: 3px solid rgb(59, 0, 114);
+}
+
 @media screen and (max-width: 426px){
     .carousel-item{
         background-color: rgba(109, 68, 146, 0.719);

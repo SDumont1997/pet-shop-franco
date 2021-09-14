@@ -27,6 +27,65 @@
                     </ul>
                 </header>
             </div>
+
+            <div class="container d-none">
+                <div class="row">
+                    <div class="col-8 offset-2 d-flex flex-column align-items-center bg-warning">
+                        <h2>Formulario Enviado</h2>
+                        <p>Gracias por escribirnos</p>
+                    </div>
+                </div>
+            </div>
+
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <h2 class="mt-2">Contacto</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 offset-2 mb-3">
+                            <label class="d-flex flex-column">
+                                Nombre
+                                <input class="mt-2" type="text" name="nombre" placeholder="Ingrese su nombre" required>
+                            </label>
+                        </div>
+                        <div class="col-8 offset-2 mb-3">
+                            <label class="d-flex flex-column">
+                                Apellido
+                                <input class="mt-2" type="text" name="apellido" placeholder="Ingrese su apellido" required>
+                            </label>
+                        </div>
+                        <div class="col-8 offset-2 mb-3">
+                            <label class="d-flex flex-column">
+                                Email
+                                <input class="mt-2" type="email" name="email" placeholder="Ingrese su Email" required>
+                            </label>
+                        </div>
+                        <div class="col-8 offset-2 mb-3">
+                            <label class="d-flex flex-column">
+                                Teléfono
+                                <input class="mt-2" type="text" name="telefono" placeholder="Ingrese su teléfono" required>
+                            </label>
+                        </div>
+                        <div class="col-8 offset-2 mb-5">
+                            <label class="d-flex flex-column">
+                                ¿Qué mascotas tiene?
+                                <select class="mt-2" name="mascotas" id="mascotas" required>
+                                    <option value="" selected="true" disabled="disabled">Elija una opción</option>
+                                    <option value="gatos">Gatos</option>
+                                    <option value="perros">Perros</option>
+                                    <option value="ambos">Ambos</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-4 offset-4 justify-content-center mb-3">
+                            <input type="submit" class="btn bg-warning w-100" disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+            </form>
             
             <footer class="footer">
                 <div class="container-fluid w-100 d-flex justify-content-center align-items-center">
