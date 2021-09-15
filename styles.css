@@ -145,6 +145,11 @@ select {
     color: #ffc107 !important;
 }
 
+@media screen and (max-width: 769px){
+    #offcanvasRight{
+        width: 80vw;
+    }
+}
 
 @media screen and (max-width: 426px){
 

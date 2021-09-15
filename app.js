@@ -7,7 +7,6 @@ const app = Vue.createApp({
             formElements: ["", "", "", "", ""],
             formSeen: true,
             productAmount: 0,
-            cart: []
         }
     },
     methods: {
