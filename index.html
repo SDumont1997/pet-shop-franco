@@ -33,30 +33,34 @@
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-              <h5 id="offcanvasRightLabel">Carrito de compras</h5>
+              <h3 id="offcanvasRightLabel">Carrito de compras</h3>
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <table class="table table-hover table-responsive">
                 <thead>
-                    <tr>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Precio</th>
-                      <th scope="col">Cantidad</th>
-                      <th scope="col">Sub Total</th>
-                      <th scope="col">Opciones</th>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Sub Total</th>
+                          <th scope="col">Opciones</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="product in paintTrolley">
+                        <td>{{product.nombre}}</td>
+                        <td>${{product.precio}}</td>
+                        <td>{{product.__v}}</td>
+                        <td>${{product.precio * product.__v}}</td>
+                        <td><button class="btn bg-purple text-light" :value="product._id" v-on:click="deleteOne">-</button></td>
                     </tr>
-            </thead>
-            <tbody>
-                <tr v-for="product in paintTrolley">
-                    <td>{{product.nombre}}</td>
-                    <td>${{product.precio}}</td>
-                    <td>{{product.__v}}</td>
-                    <td>${{product.precio * product.__v}}</td>
-                    <td><button class="btn bg-purple text-light" :value="product._id" v-on:click="deleteOne">-</button></td>
-                </tr>
-            </tbody>
+                </tbody>
               </table>
+              <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-end"><h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4></li>
+                  <li class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
+              </ul>
             </div>
           </div>
 

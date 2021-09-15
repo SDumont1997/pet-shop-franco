@@ -36,7 +36,7 @@
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                      <h5 id="offcanvasRightLabel">Carrito de compras</h5>
+                      <h3 id="offcanvasRightLabel">Carrito de compras</h3>
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -62,6 +62,7 @@
                       </table>
                       <ul class="list-group">
                           <li class="list-group-item d-flex justify-content-end"><h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4></li>
+                          <li class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
                       </ul>
                     </div>
                   </div>
