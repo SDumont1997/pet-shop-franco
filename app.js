@@ -17,9 +17,12 @@ const app = Vue.createApp({
             this.productAmount = submitEvent.target.elements.amountAdded.value
             this.products.forEach(product => {
                 if(submitEvent.target.elements.cartSubmit.id === product._id){
-                    product.__v = parseInt(this.productAmount)
+                    product.__v += parseInt(this.productAmount)
                     product.stock -= this.productAmount
+                    submitEvent.target.elements.amountAdded.value = 0
+                    
                 }
+                
             });
             localStorage.setItem("products", JSON.stringify(this.products))
         },
@@ -27,6 +30,7 @@ const app = Vue.createApp({
             this.products.forEach(product => {
                 if(clickEvent.target.value === product._id){
                     product.__v --
+                    product.stock ++
                 }
             }) 
             localStorage.setItem("products", JSON.stringify(this.products))
@@ -41,7 +45,6 @@ const app = Vue.createApp({
         checkout(){
             localStorage.removeItem("products")
             this.products.forEach(product => {
-                product.stock += product.__v
                 product.__v = 0
             })
         }
@@ -55,8 +58,8 @@ const app = Vue.createApp({
             })
             .then((data) => {
                 this.products = localStorage.getItem("products")? JSON.parse(localStorage.getItem("products")) : [...data.response]
-                this.medicines = [...data.response.filter(product => product.tipo === "Medicamento")]
-                this.toys = [...data.response.filter(product => product.tipo === "Juguete")]
+                this.medicines = [...this.products.filter(product => product.tipo === "Medicamento")]
+                this.toys = [...this.products.filter(product => product.tipo === "Juguete")]
             })
     },
     computed: {

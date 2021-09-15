@@ -28,9 +28,8 @@
 }
 
 .carousel-item p{
-    color: white; 
+    color: rgb(59, 0, 114); 
     font-size: 2vw;
-    -webkit-text-stroke: 0.1vh rgb(59, 0, 114);
 }
 
 h2{
@@ -95,6 +94,15 @@ select{
 .divFooter>a>i:hover{
     color: #fff;
     transform: rotate(360deg);
+}
+
+.card-text{
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.hover-warning:hover{
+    color: #ffc107 !important;
 }
 
 
