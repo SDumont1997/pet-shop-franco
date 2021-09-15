@@ -80,6 +80,16 @@ select{
     width: 40vw;
 }
 
+/*******ICONO CARRITO****/
+.bi-cart4{
+    font-size: 30px;
+    color: #fff;
+}
+.nav-link.bg-warning{
+    padding: 0 .3rem;
+    margin: 0;
+}
+
 /*******FOOTER***********/
 .divFooter>a{
     background-color: inherit;
