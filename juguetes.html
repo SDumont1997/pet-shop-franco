@@ -50,7 +50,7 @@
                                     <th scope="col">Precio</th>
                                     <th scope="col">Cantidad</th>
                                     <th scope="col">Sub Total</th>
-                                    <th scope="col">Opciones</th>
+                                    <th scope="col" class="text-center">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,16 +59,33 @@
                                     <td>${{product.precio}}</td>
                                     <td>{{product.__v}}</td>
                                     <td>${{product.precio * product.__v}}</td>
-                                    <td><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
+                                    <td class="text-center"><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
                                 </tr>
                             </tbody>
                       </table>
                       <ul class="list-group">
                           <li class="list-group-item d-flex justify-content-end"><h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4></li>
-                          <li v-if="paintTrolley.length > 0" class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
+                          <li v-if="paintTrolley.length > 0" class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</button></li>
                       </ul>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content bg-purple">
+                        <div class="modal-header">
+                        <h5 class="modal-title text-light text-center" id="exampleModalLabel">Pago realizado correctamente</h5>
+                        </div>
+                        <div class="modal-body">
+                        <h3 class="text-light text-center">Gracias por su compra</h3>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-warning text-dark" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>                
 
                 <div class="container">
                     <div class="row">

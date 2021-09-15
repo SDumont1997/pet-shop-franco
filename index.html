@@ -45,7 +45,7 @@
                           <th scope="col">Precio</th>
                           <th scope="col">Cantidad</th>
                           <th scope="col">Sub Total</th>
-                          <th scope="col">Opciones</th>
+                          <th scope="col" class="text-center">Opciones</th>
                         </tr>
                 </thead>
                 <tbody>
@@ -54,16 +54,33 @@
                         <td>${{product.precio}}</td>
                         <td>{{product.__v}}</td>
                         <td>${{product.precio * product.__v}}</td>
-                        <td><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
+                        <td class="text-center"><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
                     </tr>
                 </tbody>
               </table>
               <ul class="list-group">
                   <li class="list-group-item d-flex justify-content-end"><h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4></li>
-                  <li v-if="paintTrolley.length > 0" class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
+                  <li v-if="paintTrolley.length > 0" class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</button></li>
               </ul>
             </div>
         </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content bg-purple">
+                        <div class="modal-header">
+                        <h5 class="modal-title text-light text-center" id="exampleModalLabel">Pago realizado correctamente</h5>
+                        </div>
+                        <div class="modal-body">
+                        <h3 class="text-light text-center">Gracias por su compra</h3>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-warning text-dark" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>        
 
           <div class="container-fluid d-md-none" id="indexMobile">
               <div class="row">
@@ -89,18 +106,22 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./assets/wallpaperbetter.com_3840x2160.jpg" class="d-block w-100 opacity-50">
-                    <div class="carousel-caption"  id="carousel-caption-1">
+                    <div class="carousel-caption d-flex flex-column justify-content-around div-carousel-caption" id="carousel-caption-1">
                         <h2>Bienvenidos a mi Tienda</h2>
-                        <p>Disponemos de los mejores productos para sus mascotas</p>
-                        <p>Los invitamos a chequear nuestro catálogo y contactarnos si así lo desean</p>
+                        <div>
+                            <p>Disponemos de los mejores productos para sus mascotas</p>
+                            <p>Los invitamos a chequear nuestro catálogo y contactarnos si así lo desean</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="./assets/466168.jpg" class="d-block w-100 opacity-50">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption d-flex flex-column justify-content-around div-carousel-caption">
                         <h2>¿Quiénes Somos?</h2>
-                        <p>Somos una tienda de artículos para mascotas ubicada en el barrio porteño de Caballito. Desde hace 10 años trabajamos con total responsabilidad y profesionalismo, manteniendo el espíritu de familia que nos caracteriza.</p>
-                        <p>En Franco Pet Shop amamos a los animales y es por eso que brindamos la mejor calidad en nuestros productos y servicios de excelencia, siempre al precio más conveniente.</p>
+                        <div>
+                            <p>Somos una tienda de artículos para mascotas ubicada en el barrio porteño de Caballito. Desde hace 10 años trabajamos con total responsabilidad y profesionalismo, manteniendo el espíritu de familia que nos caracteriza.</p>
+                            <p>En Franco Pet Shop amamos a los animales y es por eso que brindamos la mejor calidad en nuestros productos y servicios de excelencia, siempre al precio más conveniente.</p>
+                        </div>
                     </div>
                 </div>
             </div>

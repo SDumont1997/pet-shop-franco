@@ -37,6 +37,10 @@
     font-weight: bolder;
 }
 
+.div-carousel-caption{
+    height: 100%;
+}
+
 h2 {
     color: rgb(59, 0, 114);
     font-size: 4vw;
