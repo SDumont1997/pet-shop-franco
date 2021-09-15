@@ -83,7 +83,7 @@
                                         <span v-if="5 > product.stock && product.stock !== 0" class="text-white bg-danger mb-3 p-2 rounded">Últimas unidades</span>
                                         <span v-if="product.stock === 0" class="text-white bg-secondary mb-3 p-2 rounded">Agotado</span>
                                         <label class="mb-3 text-light">
-                                            Cantidad <input type="number" min="0" :max="product.stock" :value="product.stock > 0 ? 1 : 0" name="amountAdded">
+                                            Cantidad <input  class="inputNumber" type="number" min="0" :max="product.stock" :value="product.stock > 0 ? 1 : 0" name="amountAdded">
                                         </label>
                                         <input :id="product._id" name="cartSubmit" type="submit" class="btn bg-warning" value="Agregar al Carrito">
                                     </form>
