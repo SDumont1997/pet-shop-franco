@@ -60,13 +60,11 @@
                                     <td><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
                                 </tr>
                             </tbody>
-                        </table>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-end">
-                                <h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
-                        </ul>
+                      </table>
+                      <ul class="list-group">
+                          <li class="list-group-item d-flex justify-content-end"><h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4></li>
+                          <li v-if="paintTrolley.length > 0" class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
+                      </ul>
                     </div>
                 </div>
 
@@ -85,7 +83,7 @@
                                         <span v-if="5 > product.stock && product.stock !== 0" class="text-white bg-danger mb-3 p-2 rounded">Últimas unidades</span>
                                         <span v-if="product.stock === 0" class="text-white bg-secondary mb-3 p-2 rounded">Agotado</span>
                                         <label class="mb-3 text-light">
-                                            Cantidad <input type="number" min="0" :max="product.stock" value="0" name="amountAdded">
+                                            Cantidad <input type="number" min="0" :max="product.stock" value="1" name="amountAdded">
                                         </label>
                                         <input :id="product._id" name="cartSubmit" type="submit" class="btn bg-warning" value="Agregar al Carrito">
                                     </form>
