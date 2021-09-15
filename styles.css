@@ -1,61 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Glory&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.bg-purple{
+body {
+    background-color: #fdfdfd;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffc107' fill-opacity='0.77' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.bg-purple {
     background-color: rgb(59, 0, 114);
 }
 
-.main-title{
+.main-title {
     margin-left: 10px;
     font-size: xx-large;
     font-family: 'Pacifico', cursive;
 }
 
-.carousel-caption{
+.carousel-caption {
     top: 0;
     bottom: auto;
 }
 
-.carousel-item h2{
+.carousel-item h2 {
     color: rgb(59, 0, 114);
     font-size: 4vw;
 }
 
-.carousel-item p{
-    color: white; 
+.carousel-item p {
+    color: white;
     font-size: 2vw;
     font-weight: bolder;
 }
 
-h2{
+h2 {
     color: rgb(59, 0, 114);
     font-size: 4vw;
     font-family: 'Glory', serif;
 }
 
-footer div{
+footer div {
     background-color: rgb(59, 0, 114);
     color: white;
     height: 10vh;
 }
 
-input{
+input {
     border: none;
     border-bottom: 3px solid rgb(59, 0, 114);
 }
 
-select{
+select {
     border: none;
     border-bottom: 3px solid rgb(59, 0, 114);
 }
 
-.limit{
+.limit {
     width: 150px;
     height: 150px;
     max-height: 150px;
@@ -63,13 +67,18 @@ select{
     overflow: hidden;
 }
 
-.limit img{
+.limit img {
     height: 100%;
     width: 100%;
 }
 
+.animate:hover {
+    animation: pulse;
+    animation-duration: 2s
+}
+
 #telInput {
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
 }
 
 #telInput::-webkit-outer-spin-button,
@@ -77,48 +86,57 @@ select{
     -webkit-appearance: none;
 }
 
-#offcanvasRight{
+#offcanvasRight {
     width: 40vw;
 }
 
-[v-cloak]{
+[v-cloak] {
     display: none
 }
 
+
 /*******ICONO CARRITO****/
-.bi-cart4{
+
+.bi-cart4 {
     font-size: 30px;
     color: #fff;
 }
-.nav-link.bg-warning{
+
+.nav-link.bg-warning {
     padding: 0 .3rem;
     margin: 0;
 }
-.offcanvas-header .btn-close{
+
+.offcanvas-header .btn-close {
     background-color: #fff;
 }
+
+
 /*******FOOTER***********/
-.divFooter>a{
+
+.divFooter>a {
     background-color: inherit;
     border: none;
     transition: 1s;
 }
-.divFooter>a>i{
+
+.divFooter>a>i {
     color: #fff;
     font-size: 25px;
     transition: 1s;
 }
-.divFooter>a>i:hover{
+
+.divFooter>a>i:hover {
     color: #fff;
     transform: rotate(360deg);
 }
 
-.card-text{
+.card-text {
     font-weight: bolder;
     font-size: 1.2em;
 }
 
-.hover-warning:hover{
+.hover-warning:hover {
     color: #ffc107 !important;
 }
 
@@ -128,12 +146,10 @@ select{
     h2{
         font-size: 6vw;
     }
-
-    .nav-item a{
+    .nav-item a {
         font-size: .8em;
     }
-
-    #offcanvasRight{
+    #offcanvasRight {
         width: 100vw;
     }
 }
