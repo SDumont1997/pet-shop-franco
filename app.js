@@ -21,6 +21,7 @@ const app = Vue.createApp({
                     product.stock -= this.productAmount
                 }
             });
+            localStorage.setItem("products", JSON.stringify(this.products))
         },
         deleteOne(submitEvent){
             console.log(submitEvent.target.value)
@@ -29,7 +30,15 @@ const app = Vue.createApp({
                     product.__v --
                 }
             }) 
-        }
+            localStorage.setItem("products", JSON.stringify(this.products))
+        },
+        calculateTotal(){
+            let total = 0 
+            this.paintTrolley.forEach(product => {
+                total += product.precio * product.__v
+            })
+            return total
+        },
     },
     created() {
         let endpoint = "https://apipetshop.herokuapp.com/api/articulos"
@@ -39,7 +48,7 @@ const app = Vue.createApp({
                 return res.json()
             })
             .then((data) => {
-                this.products = [...data.response]
+                this.products = localStorage.getItem("products")? JSON.parse(localStorage.getItem("products")) : [...data.response]
                 this.medicines = [...data.response.filter(product => product.tipo === "Medicamento")]
                 this.toys = [...data.response.filter(product => product.tipo === "Juguete")]
             })
