@@ -28,8 +28,9 @@
 }
 
 .carousel-item p{
-    color: rgb(59, 0, 114); 
+    color: white; 
     font-size: 2vw;
+    font-weight: bolder;
 }
 
 h2{
@@ -80,6 +81,10 @@ select{
     width: 40vw;
 }
 
+[v-cloak]{
+    display: none
+}
+
 /*******ICONO CARRITO****/
 .bi-cart4{
     font-size: 30px;
@@ -90,9 +95,6 @@ select{
     margin: 0;
 }
 
-[v-cloak]{
-    display: none
-}
 
 /*******FOOTER***********/
 .divFooter>a{
