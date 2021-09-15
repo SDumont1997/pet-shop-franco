@@ -28,8 +28,9 @@
 }
 
 .carousel-item p{
-    color: rgb(59, 0, 114); 
+    color: white; 
     font-size: 2vw;
+    font-weight: bolder;
 }
 
 h2{
@@ -80,6 +81,10 @@ select{
     width: 40vw;
 }
 
+[v-cloak]{
+    display: none
+}
+
 /*******ICONO CARRITO****/
 .bi-cart4{
     font-size: 30px;
@@ -89,9 +94,14 @@ select{
     padding: 0 .3rem;
     margin: 0;
 }
+<<<<<<< HEAD
 .offcanvas-header .btn-close{
     background-color: #fff;
 }
+=======
+
+
+>>>>>>> 9845a9c09ccd4a8be0c06ec5bcd60f30c0edcdb3
 /*******FOOTER***********/
 .divFooter>a{
     background-color: inherit;
