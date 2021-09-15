@@ -76,8 +76,8 @@
                             <div v-for="product in toys" class="card m-4" style="width: 18rem;">
                                 <img class="card-img-top" :src="product.imagen" width="400" height="300">
                                 <div class="card-body d-flex flex-column justify-content-between align-items-center bg-purple">
-                                    <h5 class="card-title text-light text-center">{{product.nombre}}</h5>
-                                    <p hover-warning class="card-text text-light">Precio: ${{product.precio}}</p>
+                                    <h5 v-cloak class="card-title text-light text-center">{{product.nombre}}</h5>
+                                    <p v-cloak hover-warning class="card-text text-light">Precio: ${{product.precio}}</p>
                                     <form v-on:submit.prevent="getFormValues" class="d-flex flex-column justify-content-between align-items-center">
                                         <span v-if="5 > product.stock && product.stock !== 0" class="text-white bg-danger mb-3 p-2 rounded">Últimas unidades</span>
                                         <span v-if="product.stock === 0" class="text-white bg-secondary mb-3 p-2 rounded">Agotado</span>
