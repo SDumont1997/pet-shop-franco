@@ -30,7 +30,6 @@
     color: white; 
     font-size: 2vw;
     -webkit-text-stroke: 0.1vh rgb(59, 0, 114);
-    font-family: 'Pacifico', cursive;
 }
 
 h2{
@@ -67,12 +66,12 @@ select{
     width: 100%;
 }
 
-input[type='number'] {
+#telInput {
     -moz-appearance:textfield;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+#telInput::-webkit-outer-spin-button,
+#telInput::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 

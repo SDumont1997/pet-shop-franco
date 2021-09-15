@@ -80,12 +80,12 @@
                         <div class="col-8 offset-2 mb-3">
                             <label class="d-flex flex-column">
                                 Teléfono*
-                                <input v-model="formElements[3]" class="mt-2" type="text" name="telefono" placeholder="Ingrese su teléfono" required>
+                                <input id="telInput" v-model="formElements[3]" class="mt-2" type="number" name="telefono" placeholder="Ingrese su teléfono" required>
                             </label>
                         </div>
-                        <div class="col-8 offset-2 mb-5">
+                        <div class="col-8 offset-2 mb-3">
                             <label class="d-flex flex-column">
-                                ¿Qué mascota(s) tiene?
+                                ¿Qué mascota(s) tiene?*
                                 <select v-model="formElements[4]" class="mt-2" name="mascotas" id="mascotas" required>
                                     <option value="" selected="true" disabled>Elija una opción</option>
                                     <option value="gatos">Gatos</option>
@@ -93,6 +93,12 @@
                                     <option value="ambos">Ambos</option>
                                 </select>
                             </label>
+                        </div>
+                        <div class="col-8 offset-2 mb-5 d-flex flex-column">
+                            <textarea name="comment" id="comment" rows="6" placeholder="Escriba su comentario..."></textarea>
+                        </div>
+                        <div class="col-8 offset-2 mb-2">
+                            <p>(*): Campos Obligatorios</p>
                         </div>
                         <div class="col-4 offset-4 justify-content-center mb-3">
                             <input type="submit" class="btn bg-warning w-100" value="Enviar" :disabled=isDisabled>
