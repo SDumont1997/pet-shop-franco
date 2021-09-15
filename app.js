@@ -19,9 +19,7 @@ const app = Vue.createApp({
             this.products.forEach(product => {
                 if(submitEvent.target.elements.cartSubmit.id === product._id){
                     product.__v += parseInt(this.productAmount)
-                    product.stock -= this.productAmount
-                    submitEvent.target.elements.amountAdded.value = 0
-                    
+                    product.stock -= this.productAmount                  
                 }
                 
             });

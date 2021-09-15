@@ -1,98 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Shop Franco - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="./assets/favicon.ico">
 </head>
-
 <body>
     <div id="app">
         <div class="d-flex flex-column justify-content-between min-vh-100">
 
             <div class="container-fluid sticky-top p-0">
                 <header class="d-flex flex-wrap justify-content-center bg-purple p-3">
-                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                        <img src="./assets/logo.png" width="100" class="ml-2">
-                        <span class="text-light main-title animate">Pet Shop Franco</span>
-                    </a>
-
-                    <ul class="nav nav-pills d-flex flex-wrap justify-content-around align-items-center">
-                        <li class="nav-item"><a href="#" class="nav-link text-warning hover-warning">Inicio</a></li>
+              <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                  <img src="./assets/logo.png" width="100" class="ml-2">
+                  <span class="text-light main-title">Pet Shop Franco</span>
+                </a>
+                
+                <ul class="nav nav-pills d-flex flex-wrap justify-content-around align-items-center">
+                    <li class="nav-item"><a href="#" class="nav-link text-warning hover-warning">Inicio</a></li>
                         <li class="nav-item"><a href="./farmacia.html" class="nav-link text-light hover-warning">Farmacia</a></li>
                         <li class="nav-item"><a href="./juguetes.html" class="nav-link text-light hover-warning">Juguetes</a></li>
                         <li class="nav-item"><a href="./contacto.html" class="nav-link text-light hover-warning">Contáctenos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart4 hover-warning"></i></a></li>
-                    </ul>
-                </header>
-            </div>
+                </ul>
+            </header>
+        </div>
 
-            <div class="offcanvas offcanvas-end bg-purple text-light" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <h3 id="offcanvasRightLabel">Carrito de compras</h3>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <table class="table table-responsive text-light">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Sub Total</th>
-                                <th scope="col">Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="product in paintTrolley">
-                                <td>{{product.nombre}}</td>
-                                <td>${{product.precio}}</td>
-                                <td>{{product.__v}}</td>
-                                <td>${{product.precio * product.__v}}</td>
-                                <td><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-end">
-                            <h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4>
-                        </li>
-                        <li v-if="paintTrolley.length > 0" class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
-                    </ul>
-                </div>
+        <div class="offcanvas offcanvas-end bg-purple text-light" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h3 id="offcanvasRightLabel">Carrito de compras</h3>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <table class="table table-responsive text-light">
+                <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Sub Total</th>
+                          <th scope="col">Opciones</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="product in paintTrolley">
+                        <td>{{product.nombre}}</td>
+                        <td>${{product.precio}}</td>
+                        <td>{{product.__v}}</td>
+                        <td>${{product.precio * product.__v}}</td>
+                        <td><button class="btn bg-warning text-dark" :value="product._id" v-on:click="deleteOne">-</button></td>
+                    </tr>
+                </tbody>
+              </table>
+              <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-end"><h4 class="me-lg-4">Precio Total ${{calculateTotal()}}</h4></li>
+                  <li class="list-group-item d-flex justify-content-end"><button v-on:click="checkout" class="btn bg-purple text-light ps-4 pt-2 pe-4 pb-2">Pagar</button></li>
+              </ul>
             </div>
           </div>
-          <div class="container-fluid d-md-none" id="indexMobile">
-              <div class="row">
-                <div class="col-12"><h2 class="text-center mt-3">Bienvenidos a mi Tienda</h2></div>
-                <div class="col-12">
-                    <p>Disponemos de los mejores productos para sus mascotas</p>
-                    <p>Los invitamos a chequear nuestro catálogo y contactarnos si así lo desean</p>
-                </div>
-                <div class="col-12 p-0">
-                    <img src="./assets/466168.jpg" class="w-100">
-                </div>
-                <div class="col-12"><h2 class="text-center mt-3">¿Quiénes Somos?</h2></div>
-                <div class="col-12">
-                    <p>Somos una tienda de artículos para mascotas ubicada en el barrio porteño de Caballito. Desde hace 10 años trabajamos con total responsabilidad y profesionalismo, manteniendo el espíritu de familia que nos caracteriza.</p>
-                    <p>En Franco Pet Shop amamos a los animales y es por eso que brindamos la mejor calidad en nuestros productos y servicios de excelencia, siempre al precio más conveniente.</p>
-                </div>
-                <div class="col-12 p-0">
-                    <img src="./assets/wallpaperbetter.com_3840x2160.jpg" class="w-100">
-                </div>
-              </div>
-          </div>
-        <div id="carouselExampleCaptions" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./assets/wallpaperbetter.com_3840x2160.jpg" class="d-block w-100 opacity-50">
+                    <img src="./assets/wallpaperbetter.com_3840x2160.jpg" class="d-block w-100">
                     <div class="carousel-caption"  id="carousel-caption-1">
                         <h2>Bienvenidos a mi Tienda</h2>
                         <p>Disponemos de los mejores productos para sus mascotas</p>
@@ -100,44 +75,43 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./assets/466168.jpg" class="d-block w-100 opacity-50">
+                    <img src="./assets/466168.jpg" class="d-block w-100">
                     <div class="carousel-caption">
                         <h2>¿Quiénes Somos?</h2>
                         <p>Somos una tienda de artículos para mascotas ubicada en el barrio porteño de Caballito. Desde hace 10 años trabajamos con total responsabilidad y profesionalismo, manteniendo el espíritu de familia que nos caracteriza.</p>
                         <p>En Franco Pet Shop amamos a los animales y es por eso que brindamos la mejor calidad en nuestros productos y servicios de excelencia, siempre al precio más conveniente.</p>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-            </div>
-            <div class="d-flex flex-column w-100 align-items-center">
-                <h2 class="p-3">¿Dónde Estamos?</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.686925810957!2d-58.432572284770245!3d-34.612077380457286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses-419!2sar!4v1631562395725!5m2!1ses-419!2sar"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+          <div class="d-flex flex-column w-100 align-items-center">
+              <h2 class="p-3">¿Dónde Estamos?</h2>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.686925810957!2d-58.432572284770245!3d-34.612077380457286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses-419!2sar!4v1631562395725!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <footer class="footer">
                 <div class="container-fluid w-100 d-flex justify-content-center align-items-center flex-column">
                     <div class="divFooter">
                         <a href="https://www.instagram.com/?hl=es" target="_blank"><i class="bi bi-instagram btn"></i></a>
-                        <a href="https://twitter.com/?lang=es" target="_blank"><i class="bi bi-twitter btn"></i></a>
-                        <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook btn"></i></a>
+                        <a href="https://twitter.com/?lang=es" target="_blank"><i class="bi bi-twitter btn"></i></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook btn"></i></i></a>
                     </div>
                     <span>&copy;2021 | Franco Pet Shop</span>
                 </div>
             </footer>
         </div>
-
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="./app.js"></script>
-</body>
-
-</html>
+            
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./app.js"></script>
+    </body>
+    </html>
