@@ -171,4 +171,25 @@ select {
     #offcanvasRight {
         width: 100vw;
     }
+    .offcanvas-body{
+        width: 100%;
+        padding: 0;
+    }
+    #offcanvasRight table{
+        width: 100% !important;
+        font-size: 14px !important;
+        text-align: center;
+    }
+    #offcanvasRight table th, #offcanvasRight table td{
+        padding: .5rem 0;
+        width: 20%;
+    }
+    #offcanvasRight table tr>td:nth-child(1){
+        text-align: justify;
+        padding-left:.2rem ;
+    }
+   
+
+
+
 }
