@@ -124,23 +124,6 @@ select{
 
 
 @media screen and (max-width: 426px){
-    .carousel-item{
-        background-color: rgba(109, 68, 146, 0.719);
-        height: 50vh;
-    }
-
-    .carousel-caption{
-        top: auto;
-        bottom: 0;
-    }
-
-    .carousel-item h2{
-        font-size: 6vw;
-    }
-    
-    .carousel-item p{
-        font-size: 3vw;
-    }
 
     h2{
         font-size: 6vw;
