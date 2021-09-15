@@ -40,7 +40,26 @@
                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                      ...
+                      <table class="table table-hover table-responsive">
+                        <thead>
+                                <tr>
+                                  <th scope="col">Cantidad</th>
+                                  <th scope="col">Nombre</th>
+                                  <th scope="col">Precio</th>
+                                  <th scope="col">Sub Total</th>
+                                  <th scope="col">Opciones</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="product in paintTrolley">
+                                <td>{{product.__v}}</td>
+                                <td>{{product.nombre}}</td>
+                                <td>${{product.precio}}</td>
+                                <td>${{product.precio * product.__v}}</td>
+                                <td><button class="btn bg-purple text-light" :value="product._id" v-on:click="deleteOne">-</button></td>
+                            </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 
@@ -55,12 +74,12 @@
                                 <div class="card-body d-flex flex-column justify-content-between align-items-center bg-purple">
                                     <h5 class="card-title text-light">{{product.nombre}}</h5>
                                     <p class="card-text text-light">Precio: ${{product.precio}}</p>
-                                    <form class="d-flex flex-column justify-content-between align-items-center">
+                                    <form v-on:submit.prevent="getFormValues" class="d-flex flex-column justify-content-between align-items-center">
                                         <span v-if="5 > product.stock" class="text-white bg-danger mb-3 p-2 rounded">Últimas unidades</span>
                                         <label class="mb-3 text-light">
-                                            Cantidad <input type="number" min="1" :max="product.stock" value="1">
+                                            Cantidad <input type="number" min="1" :max="product.stock" value="1" name="amountAdded">
                                         </label>
-                                        <input type="submit" class="btn bg-warning" value="Agregar al Carrito">
+                                        <input :id="product._id" name="cartSubmit" type="submit" class="btn bg-warning" value="Agregar al Carrito">
                                     </form>
                                 </div>
                             </div>

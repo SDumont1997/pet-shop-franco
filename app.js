@@ -6,11 +6,29 @@ const app = Vue.createApp({
             toys: [],
             formElements: ["", "", "", "", ""],
             formSeen: true,
+            productAmount: 0,
         }
     },
     methods: {
         sendForm(){
             this.formSeen = false
+        },
+        getFormValues(submitEvent){
+            this.productAmount = submitEvent.target.elements.amountAdded.value
+            this.products.forEach(product => {
+                if(submitEvent.target.elements.cartSubmit.id === product._id){
+                    product.__v = parseInt(this.productAmount)
+                    product.stock -= this.productAmount
+                }
+            });
+        },
+        deleteOne(submitEvent){
+            console.log(submitEvent.target.value)
+            this.products.forEach(product => {
+                if(submitEvent.target.value === product._id){
+                    product.__v --
+                }
+            }) 
         }
     },
     created() {
@@ -33,6 +51,10 @@ const app = Vue.createApp({
             } else {
                 return true
             }
+        },
+        paintTrolley(){
+            let filteredProducts = this.products.filter(product => product.__v > 0)
+            return filteredProducts
         }
     }
 })

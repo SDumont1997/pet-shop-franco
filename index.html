@@ -37,7 +37,26 @@
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              ...
+              <table class="table table-hover table-responsive">
+                <thead>
+                        <tr>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col">Sub Total</th>
+                          <th scope="col">Opciones</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="product in paintTrolley">
+                        <td>{{product.__v}}</td>
+                        <td>{{product.nombre}}</td>
+                        <td>${{product.precio}}</td>
+                        <td>${{product.precio * product.__v}}</td>
+                        <td><button class="btn bg-purple text-light" :value="product._id" v-on:click="deleteOne">-</button></td>
+                    </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

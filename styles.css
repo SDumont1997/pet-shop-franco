@@ -76,6 +76,10 @@ select{
     -webkit-appearance: none;
 }
 
+#offcanvasRight{
+    width: 40vw;
+}
+
 /*******FOOTER***********/
 .divFooter>a{
     background-color: inherit;
@@ -118,5 +122,9 @@ select{
 
     .nav-item a{
         font-size: .8em;
+    }
+
+    #offcanvasRight{
+        width: 100vw;
     }
 }
